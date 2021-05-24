@@ -1,0 +1,475 @@
+
+package frm;
+
+import java.awt.Button;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class frm6 extends WindowAdapter 
+{
+    Frame f;
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,restart;
+    String x="X",o="O";//win;
+    Font ff,fff;
+    int m=0;
+    Label l,l1;
+    
+    frm6()  // tic tac toy
+    {
+        f=new Frame();
+        f.setSize(1000,1000);
+        f.setVisible(true);
+        f.setLayout(null);
+        f.addWindowListener(this);
+        
+        ff=new Font("FORTE",Font.BOLD, 25); // O or X
+        fff=new Font("ARIEL", Font.PLAIN, 30);  // label & restart
+    
+        b1=new Button();
+        b1.setBounds(200,100,200,200);
+        b1.setFont(ff);
+        f.add(b1);
+        
+        b2=new Button();
+        b2.setBounds(400,100,200,200);
+        b2.setFont(ff);
+        f.add(b2);
+        
+        b3=new Button();
+        b3.setBounds(600,100,200,200);
+        b3.setFont(ff);
+        f.add(b3);
+        
+        b4=new Button();
+        b4.setBounds(200,300,200,200);
+        b4.setFont(ff);
+        f.add(b4);
+        
+        b5=new Button();
+        b5.setBounds(400,300,200,200);
+        b5.setFont(ff);
+        f.add(b5);
+        
+        b6=new Button();
+        b6.setBounds(600,300,200,200);
+        b6.setFont(ff);
+        f.add(b6);
+        
+        b7=new Button();
+        b7.setBounds(200,500,200,200);
+        b7.setFont(ff);
+        f.add(b7);
+        
+        b8=new Button();
+        b8.setBounds(400,500,200,200);
+        b8.setFont(ff);
+        f.add(b8);
+        
+        b9=new Button();
+        b9.setBounds(600,500,200,200);
+        b9.setFont(ff);
+        f.add(b9);
+        
+        l=new Label();
+        l.setBounds(400, 800, 400, 50);
+        l.setFont(fff);
+        f.add(l);
+        l1=new Label("Tic Tac Toe");
+        l1.setBounds(400, 30, 400, 60);
+        l1.setFont(fff);
+        f.add(l1);
+        restart=new Button("Restart");
+        restart.setBounds(450,900,100,30);
+        restart.setFont(fff);
+        f.add(restart);
+     
+        restart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                l.setText("");
+                b1.setLabel("");
+                b2.setLabel("");
+                b3.setLabel("");
+                b4.setLabel("");
+                b5.setLabel("");
+                b6.setLabel("");
+                b7.setLabel("");
+                b8.setLabel("");
+                b9.setLabel("");
+                m++;
+            }
+        });
+        
+        
+         b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b1.setLabel(x);
+                }
+                else
+                {
+                    b1.setLabel(o);
+                }
+                m++;
+                win();
+//                if((b1.getLabel()==b2.getLabel()) && (b1.getLabel()==b3.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b1.getLabel()==b4.getLabel()) && (b1.getLabel()==b7.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b1.getLabel()==b5.getLabel()) && (b1.getLabel()==b9.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        }); 
+         
+         b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b2.setLabel(x);
+                }
+                else
+                {
+                    b2.setLabel(o);
+                }
+                m++;
+                win();
+//                if((b1.getLabel()==b2.getLabel()) && (b1.getLabel()==b3.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                 if((b2.getLabel()==b5.getLabel()) && (b2.getLabel()==b8.getLabel()))
+//         {
+//             if(b2.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//             System.out.println(""+win+" is winner");
+//         }
+            }
+        });
+         
+         b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b3.setLabel(x);
+                }
+                else
+                {
+                    b3.setLabel(o);
+                }
+                m++;
+                win();
+//                if((b1.getLabel()==b2.getLabel()) && (b1.getLabel()==b3.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b3.getLabel()==b6.getLabel()) && (b3.getLabel()==b9.getLabel()))
+//         {
+//             if(b7.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b3.getLabel()==b5.getLabel()) && (b3.getLabel()==b7.getLabel()))
+//         {
+//             if(b3.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        });
+         
+          b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b4.setLabel(x);
+                }
+                else
+                {
+                    b4.setLabel(o);
+                }
+                m++;
+                
+                win();
+//                if((b4.getLabel()==b5.getLabel()) && (b4.getLabel()==b6.getLabel()))
+//         {
+//             if(b4.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b1.getLabel()==b4.getLabel()) && (b1.getLabel()==b7.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        }); 
+         
+         b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b5.setLabel(x);
+                }
+                else
+                {
+                    b5.setLabel(o);
+                }
+                m++;
+                
+                win();
+//                if((b4.getLabel()==b5.getLabel()) && (b4.getLabel()==b6.getLabel()))
+//         {
+//             if(b4.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                 if((b2.getLabel()==b5.getLabel()) && (b2.getLabel()==b8.getLabel()))
+//         {
+//             if(b2.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                 if((b1.getLabel()==b5.getLabel()) && (b1.getLabel()==b9.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//             System.out.println(""+win+" is winner");
+//         }
+//                 if((b3.getLabel()==b5.getLabel()) && (b3.getLabel()==b7.getLabel()))
+//         {
+//             if(b3.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        });
+         
+         b6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b6.setLabel(x);
+                }
+                else
+                {
+                    b6.setLabel(o);
+                }
+                m++;
+                win();
+//                if((b4.getLabel()==b5.getLabel()) && (b4.getLabel()==b6.getLabel()))
+//         {
+//             if(b4.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b3.getLabel()==b6.getLabel()) && (b3.getLabel()==b9.getLabel()))
+//         {
+//             if(b7.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        });
+         
+          b7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b7.setLabel(x);
+                }
+                else
+                {
+                    b7.setLabel(o);
+                }
+                m++;
+                
+                win();
+//                if((b7.getLabel()==b8.getLabel()) && (b7.getLabel()==b9.getLabel()))
+//         {
+//             if(b7.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b1.getLabel()==b4.getLabel()) && (b1.getLabel()==b7.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b3.getLabel()==b5.getLabel()) && (b3.getLabel()==b7.getLabel()))
+//         {
+//             if(b3.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        }); 
+         
+         b8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b8.setLabel(x);
+                }
+                else
+                {
+                    b8.setLabel(o);
+                }
+                m++;
+                win();
+//                if((b7.getLabel()==b8.getLabel()) && (b7.getLabel()==b9.getLabel()))
+//         {
+//             if(b7.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                 if((b2.getLabel()==b5.getLabel()) && (b2.getLabel()==b8.getLabel()))
+//         {
+//             if(b2.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        });
+         
+         b9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                if(m%2==0)
+                {
+                    b9.setLabel(x);
+                }
+                else
+                {
+                    b9.setLabel(o);
+                }
+                m++;
+                win();
+//                if((b7.getLabel()==b8.getLabel()) && (b7.getLabel()==b9.getLabel()))
+//         {
+//             if(b7.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b3.getLabel()==b6.getLabel()) && (b3.getLabel()==b9.getLabel()))
+//         {
+//             if(b7.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+//                if((b1.getLabel()==b5.getLabel()) && (b1.getLabel()==b9.getLabel()))
+//         {
+//             if(b1.getLabel()==x)
+//                 System.out.println(""+win+" is winner");
+//             else
+//                 System.out.println(""+win+" is winner");
+//         }
+            }
+        });
+         
+    }
+    
+    void win()
+    {
+        if((b1.getLabel().equalsIgnoreCase("o") && b2.getLabel().equalsIgnoreCase("o") && b3.getLabel().equalsIgnoreCase("o")) || 
+                (b4.getLabel().equalsIgnoreCase("o") && b5.getLabel().equalsIgnoreCase("o") && b6.getLabel().equalsIgnoreCase("o")) || 
+                (b7.getLabel().equalsIgnoreCase("o") && b8.getLabel().equalsIgnoreCase("o") && b9.getLabel().equalsIgnoreCase("o")) ||
+                (b1.getLabel().equalsIgnoreCase("o") && b4.getLabel().equalsIgnoreCase("o") && b7.getLabel().equalsIgnoreCase("o")) ||
+                (b2.getLabel().equalsIgnoreCase("o") && b5.getLabel().equalsIgnoreCase("o") && b8.getLabel().equalsIgnoreCase("o")) ||
+                (b3.getLabel().equalsIgnoreCase("o") && b6.getLabel().equalsIgnoreCase("o") && b9.getLabel().equalsIgnoreCase("o")) ||
+                (b1.getLabel().equalsIgnoreCase("o") && b5.getLabel().equalsIgnoreCase("o") && b9.getLabel().equalsIgnoreCase("o")) ||
+                (b3.getLabel().equalsIgnoreCase("o") && b5.getLabel().equalsIgnoreCase("o") && b7.getLabel().equalsIgnoreCase("o")))
+        {
+            l.setText("Player 2 is winner");
+        }
+        if((b1.getLabel().equalsIgnoreCase("x") && b2.getLabel().equalsIgnoreCase("x") && b3.getLabel().equalsIgnoreCase("x")) || 
+                (b4.getLabel().equalsIgnoreCase("x") && b5.getLabel().equalsIgnoreCase("x") && b6.getLabel().equalsIgnoreCase("x")) || 
+                (b7.getLabel().equalsIgnoreCase("x") && b8.getLabel().equalsIgnoreCase("x") && b9.getLabel().equalsIgnoreCase("x")) ||
+                (b1.getLabel().equalsIgnoreCase("x") && b4.getLabel().equalsIgnoreCase("x") && b7.getLabel().equalsIgnoreCase("x")) ||
+                (b2.getLabel().equalsIgnoreCase("x") && b5.getLabel().equalsIgnoreCase("x") && b8.getLabel().equalsIgnoreCase("x")) ||
+                (b3.getLabel().equalsIgnoreCase("x") && b6.getLabel().equalsIgnoreCase("x") && b9.getLabel().equalsIgnoreCase("x")) ||
+                (b1.getLabel().equalsIgnoreCase("x") && b5.getLabel().equalsIgnoreCase("x") && b9.getLabel().equalsIgnoreCase("x")) ||
+                (b3.getLabel().equalsIgnoreCase("x") && b5.getLabel().equalsIgnoreCase("x") && b7.getLabel().equalsIgnoreCase("x")))
+        {
+            l.setText("Player 1 is winner");
+        }
+    }
+    
+    public static void main(String[] args)
+    {
+        frm6 ff=new frm6();
+    }
+
+    @Override
+    public void windowClosing(WindowEvent we) 
+    {
+        f.dispose();
+    }
+
+}
+frm6.java
+Displaying frm6.java.
